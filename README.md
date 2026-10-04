@@ -19,7 +19,7 @@ My public work spans browser-based tools with React and TypeScript, and an earli
 
 ### Selected work
 
-#### [TrackIndex Web ↗](https://github.com/markdsilva/TrackIndexWeb)
+#### [TrackIndex Web](https://github.com/markdsilva/TrackIndexWeb)
 
 A browser-first music library and M3U8 playlist manager. Browse local tracks, edit playlists, and play music without uploading your library.
 
@@ -27,7 +27,7 @@ A browser-first music library and M3U8 playlist manager. Browse local tracks, ed
 
 ---
 
-#### [Vision-Based Fall Detection ↗](https://github.com/markdsilva/vision-based-fall-detection)
+#### [Vision-Based Fall Detection](https://github.com/markdsilva/vision-based-fall-detection)
 
 A college mini project exploring person detection, pose estimation, and action recognition in video.
 
