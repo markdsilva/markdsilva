@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="268" viewBox="0 0 480 268" role="img" aria-labelledby="title desc">
+  <title id="title">Public GitHub stats for Mark Dsilva</title>
+  <desc id="desc">3 public repositories, 2 primary languages, 0 repository stars. Includes forks. Updated 04 Oct 2026.</desc>
+  <defs><clipPath id="bar"><rect x="24" y="140" width="432" height="8" rx="4"/></clipPath></defs>
+  <rect x="0.5" y="0.5" width="479" height="267" rx="16" fill="#10141d" stroke="#2a3445"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="24" y="63" font-size="35" font-weight="650" fill="#ada5ff">03</text><text x="24" y="89" font-size="12" fill="#9ca9be">Public repos</text><text x="172" y="63" font-size="35" font-weight="650" fill="#f0f3fa">02</text><text x="172" y="89" font-size="12" fill="#9ca9be">Main languages</text><text x="320" y="63" font-size="35" font-weight="650" fill="#f0f3fa">00</text><text x="320" y="89" font-size="12" fill="#9ca9be">Repo stars</text>
+    <path d="M156 28V94M304 28V94M24 115H456" stroke="#2a3445"/>
+    <g clip-path="url(#bar)"><rect x="24.000" y="140" width="234.229" height="8" fill="#4b9ddb"/><rect x="258.229" y="140" width="168.067" height="8" fill="#9c8cff"/><rect x="426.296" y="140" width="28.588" height="8" fill="#ec9bc4"/><rect x="454.884" y="140" width="1.116" height="8" fill="#7c8ba3"/></g>
+    <circle cx="28" cy="172" r="4" fill="#4b9ddb"/><text x="41" y="177" font-size="14" fill="#9ca9be">Python <tspan fill="#f0f3fa" font-weight="600">54%</tspan></text><circle cx="252" cy="172" r="4" fill="#9c8cff"/><text x="265" y="177" font-size="14" fill="#9ca9be">TypeScript <tspan fill="#f0f3fa" font-weight="600">39%</tspan></text><circle cx="28" cy="200" r="4" fill="#ec9bc4"/><text x="41" y="205" font-size="14" fill="#9ca9be">CSS <tspan fill="#f0f3fa" font-weight="600">7%</tspan></text><circle cx="252" cy="200" r="4" fill="#7c8ba3"/><text x="265" y="205" font-size="14" fill="#9ca9be">Other <tspan fill="#f0f3fa" font-weight="600">&lt;1%</tspan></text>
+    <text x="24" y="238" font-size="11" fill="#9ca9be">Public repositories, including forks</text>
+    <text x="24" y="255" font-size="11" fill="#9ca9be">Updated 04 Oct 2026</text>
+  </g>
+</svg>

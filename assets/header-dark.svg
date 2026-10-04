@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="304" viewBox="0 0 960 304" role="img" aria-labelledby="title desc">
+  <title id="title">Mark Dsilva</title>
+  <desc id="desc">Web applications and computer vision. An original geometric monogram on a quiet technical grid.</desc>
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ada5ff"/><stop offset="1" stop-color="#8de4ce"/></linearGradient>
+    <clipPath id="frame"><rect x="1" y="1" width="958" height="302" rx="20"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="960" height="304" fill="#10141d"/>
+    <path d="M624 0V304" stroke="#2a3445"/>
+    <rect x="624" width="336" height="304" fill="#151c29"/>
+    <g stroke="#2a3445" stroke-width="1" opacity="0.6"><path d="M664 40V264"/><path d="M696 40V264"/><path d="M728 40V264"/><path d="M760 40V264"/><path d="M792 40V264"/><path d="M824 40V264"/><path d="M856 40V264"/><path d="M664 40H872"/><path d="M664 72H872"/><path d="M664 104H872"/><path d="M664 136H872"/><path d="M664 168H872"/><path d="M664 200H872"/><path d="M664 232H872"/><path d="M664 264H872"/></g>
+    <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+      <rect x="40" y="39" width="30" height="30" rx="8" fill="#ada5ff" fill-opacity="0.12"/>
+      <path d="M47 58V49L55 56L63 49V58" fill="none" stroke="#ada5ff" stroke-width="2" stroke-linejoin="round"/>
+      <text x="82" y="59" font-size="13" font-weight="600" letter-spacing="2" fill="#9ca9be">MARKDSILVA / GITHUB</text>
+      <text x="40" y="149" font-size="60" font-weight="700" letter-spacing="-2.6" fill="#f0f3fa">Mark Dsilva<tspan fill="#ada5ff">.</tspan></text>
+      <text x="42" y="187" font-size="19" fill="#9ca9be">Web applications &amp; computer vision</text>
+      <path d="M42 219H574" stroke="#2a3445"/>
+      <text x="42" y="253" font-size="13" letter-spacing="0.3" fill="#9ca9be">REACT + TYPESCRIPT</text>
+      <circle cx="229" cy="248" r="2" fill="#ada5ff"/>
+      <text x="246" y="253" font-size="13" letter-spacing="0.3" fill="#9ca9be">PYTHON + PYTORCH</text>
+    </g>
+    <circle cx="792" cy="151" r="94" fill="none" stroke="#2a3445"/>
+    <circle cx="792" cy="151" r="73" fill="#10141d" stroke="#2a3445"/>
+    <path d="M728 186V117L767 157L800 117V186M823 117V186H836C875 186 875 117 836 117H823" fill="none" stroke="url(#mark)" stroke-width="9" stroke-linejoin="round" stroke-linecap="square"/>
+    <path d="M680 57H700M690 47V67M884 245H904M894 235V255" stroke="#9ca9be" stroke-width="1.5"/>
+    <circle cx="867" cy="94" r="5" fill="#8de4ce"/>
+    <circle cx="718" cy="211" r="4" fill="#ada5ff"/>
+  </g>
+  <rect x="0.5" y="0.5" width="959" height="303" rx="20" fill="none" stroke="#2a3445"/>
+</svg>

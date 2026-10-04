@@ -1,0 +1,1 @@
+Technology icons are from [Devicon](https://github.com/devicons/devicon), licensed under the included MIT license. Each icon represents a technology present in the linked public projects. Brand names and marks belong to their respective owners.
