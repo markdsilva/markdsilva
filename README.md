@@ -1,12 +1,48 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-  <img alt="Mark Dsilva — web applications and computer vision" src="assets/header-light.svg" width="100%">
+  <img alt="Mark Dsilva — browser tools, music and computer vision" src="assets/header-light.svg" width="100%">
 </picture>
 
 <br>
 
-My public work spans browser-based tools with React and TypeScript, and an earlier computer-vision project in Python.
+I build browser-based tools with **React and TypeScript**. My public projects span local music libraries and an earlier exploration of computer vision in Python.
+
+**Currently building:** [Meloark](https://github.com/markdsilva/Meloark) — a home for your music.
+
+<br>
+
+### 01 / Featured project
+
+#### [Meloark ↗](https://github.com/markdsilva/Meloark)
+
+**Your music. Your device. Your browser.**
+
+A local-first music player and library. Explore your albums, build and export M3U8 playlists, and follow synchronized lyrics without uploading your audio.
+
+| Listen | Organize | Follow along |
+| :--- | :--- | :--- |
+| Play local tracks and browse artwork and audio details. | Edit playlists, reorder tracks, and undo changes. | Load local LRC files or opt into online lyrics. |
+
+**[Open Meloark →](https://meloark.markdsilva.com/)** &nbsp; · &nbsp; [Explore the code](https://github.com/markdsilva/Meloark) &nbsp; · &nbsp; [Report an issue](https://github.com/markdsilva/Meloark/issues)
+
+<sub>React · TypeScript · Vite · IndexedDB · Native browser audio</sub>
+
+<sub><strong>Meloark</strong> = melody + ark — a home for your music collection. Evolved from TrackIndex; the original project remains a reference.</sub>
+
+<br>
+
+### 02 / Earlier exploration
+
+#### [Vision-Based Fall Detection ↗](https://github.com/markdsilva/vision-based-fall-detection)
+
+A college computer-vision prototype combining person detection, pose estimation, tracking, and action recognition to identify possible falls in video.
+
+<sub>Python · PyTorch · OpenCV &nbsp; / &nbsp; Archived · Academic prototype · No longer maintained</sub>
+
+<br>
+
+### 03 / Tools in these projects
 
 <p>
   <img src="assets/icons/react.svg" alt="React" width="32" height="32">&nbsp;&nbsp;
@@ -17,25 +53,14 @@ My public work spans browser-based tools with React and TypeScript, and an earli
   <img src="assets/icons/opencv.svg" alt="OpenCV" width="32" height="32">
 </p>
 
-### Selected work
-
-#### [TrackIndex Web](https://github.com/markdsilva/TrackIndexWeb)
-
-A browser-first music library and M3U8 playlist manager. Browse local tracks, edit playlists, and play music without uploading your library.
-
-<sub>React · TypeScript · Vite &nbsp; / &nbsp; Part of the TrackIndex fork network</sub>
-
----
-
-#### [Vision-Based Fall Detection](https://github.com/markdsilva/vision-based-fall-detection)
-
-A college mini project exploring person detection, pose estimation, and action recognition in video.
-
-<sub>Python · PyTorch · OpenCV &nbsp; / &nbsp; Legacy project · No longer maintained</sub>
+<sub>Web: React / TypeScript / Vite &nbsp; · &nbsp; Vision: Python / PyTorch / OpenCV</sub>
 
 <br>
 
-### Public GitHub stats
+<details>
+<summary><strong>Public repository stats</strong></summary>
+
+<br>
 
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/stats-mobile-dark.svg">
@@ -47,4 +72,8 @@ A college mini project exploring person detection, pose estimation, and action r
 
 <sub>Language mix across public repositories, including forks. Refreshed daily.</sub>
 
-<sub>[Browse public repositories →](https://github.com/markdsilva?tab=repositories&amp;type=public)</sub>
+</details>
+
+---
+
+<sub>[Browse my public repositories →](https://github.com/markdsilva?tab=repositories&amp;type=public)</sub>
