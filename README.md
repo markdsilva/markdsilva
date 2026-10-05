@@ -1,7 +1,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-  <img alt="Mark Dsilva — browser tools, music and computer vision" src="assets/header-light.svg" width="100%">
+  <img alt="Mark Dsilva — browser tools and music" src="assets/header-light.svg" width="100%">
 </picture>
 
 <br>
