@@ -12,61 +12,56 @@
 
 <br>
 
-I build **local-first browser tools** with **React and TypeScript**, with a focus on clear interfaces and keeping your data on your device.
-
-<br>
-
-## <img src="assets/amber-accent.svg" alt="" width="10" height="10"> Meloark
-
-<sub>Currently building · A local-first music player and library</sub>
-
-> **Your music. Your device. Your browser.**
-
-A home for your music collection, right in your browser. Explore your albums, make playlists, and follow synchronized lyrics without uploading your audio.
-
-- **Listen** — Play local tracks and explore album artwork and audio details.
-- **Organize** — Create and reorder playlists, undo changes, and export M3U8 files.
-- **Follow along** — Use local LRC files or opt into online lyrics.
-
-**[Open Meloark →](https://meloark.markdsilva.com/)** &nbsp; · &nbsp; [Source ↗](https://github.com/markdsilva/Meloark) &nbsp; · &nbsp; [Issues ↗](https://github.com/markdsilva/Meloark/issues)
-
-<sub>Melody + ark — a home for your music.</sub>
-
-<br>
-
-## <img src="assets/amber-accent.svg" alt="" width="10" height="10"> Tools
-
-<p>
-  <img src="assets/icons/react.svg" alt="React" width="28" height="28">&nbsp;&nbsp;&nbsp;
-  <img src="assets/icons/typescript.svg" alt="TypeScript" width="28" height="28">&nbsp;&nbsp;&nbsp;
-  <img src="assets/icons/vitejs.svg" alt="Vite" width="28" height="28">
+<p align="center">
+  I build <strong>local-first browser tools</strong> with React and TypeScript.<br>
+  <sub>Clear interfaces, built around your own files.</sub>
 </p>
 
-<sub>React · TypeScript · Vite &nbsp; / &nbsp; IndexedDB · Native browser audio</sub>
+<br>
+
+### Selected work
+
+<a href="https://meloark.markdsilva.com/">
+  <picture>
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/meloark-card-dark-small.svg">
+    <source media="(max-width: 600px)" srcset="assets/meloark-card-light-small.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/meloark-card-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/meloark-card-light.svg">
+    <img src="assets/meloark-card-light.svg" alt="Meloark — a home for your music. Open the local-first music player." width="100%">
+  </picture>
+</a>
+
+Play your local library, organize playlists, and follow synchronized lyrics. Your audio stays on your device; online lyrics are optional.
+
+**[Open Meloark →](https://meloark.markdsilva.com/)** &nbsp; · &nbsp; [View source](https://github.com/markdsilva/Meloark) &nbsp; · &nbsp; [Report an issue](https://github.com/markdsilva/Meloark/issues)
+
+<sub>Meloark = melody + ark — a home for your music.</sub>
 
 <br>
 
-<details>
-<summary><strong>Earlier work</strong> &nbsp; · &nbsp; Vision-based fall detection</summary>
-
-<br>
-
-### [Vision-Based Fall Detection ↗](https://github.com/markdsilva/vision-based-fall-detection)
-
-A college prototype exploring person detection, pose estimation, tracking, and action recognition to identify possible falls in video.
+### Toolkit
 
 <p>
-  <img src="assets/icons/python.svg" alt="Python" width="24" height="24">&nbsp;&nbsp;&nbsp;
-  <img src="assets/icons/pytorch.svg" alt="PyTorch" width="24" height="24">&nbsp;&nbsp;&nbsp;
-  <img src="assets/icons/opencv.svg" alt="OpenCV" width="24" height="24">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/tool-react-dark.svg"><img src="assets/tool-react-light.svg" alt="React" width="74" height="30"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/tool-typescript-dark.svg"><img src="assets/tool-typescript-light.svg" alt="TypeScript" width="108" height="30"></picture>&nbsp;
+  <picture><source media="(prefers-color-scheme: dark)" srcset="assets/tool-vite-dark.svg"><img src="assets/tool-vite-light.svg" alt="Vite" width="62" height="30"></picture>
 </p>
 
-<sub>Python · PyTorch · OpenCV &nbsp; / &nbsp; Archived academic prototype</sub>
+<sub>Also working with IndexedDB and native browser audio.</sub>
 
-</details>
+<br>
+
+### Earlier work
+
+**[Vision-Based Fall Detection ↗](https://github.com/markdsilva/vision-based-fall-detection)**<br>
+<sub>Archived academic project · Python · PyTorch · OpenCV</sub>
+
+A college prototype exploring pose estimation, tracking, and action recognition to identify possible falls in video.
 
 <br>
 
 ---
 
-<sub>[Explore my public repositories →](https://github.com/markdsilva?tab=repositories&amp;type=public)</sub>
+<p align="center">
+  <sub><a href="https://github.com/markdsilva?tab=repositories&amp;type=public">Explore my public repositories ↗</a></sub>
+</p>

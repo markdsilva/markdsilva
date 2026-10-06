@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="166" viewBox="0 0 480 166" role="img" aria-labelledby="title desc">
+  <title id="title">Meloark</title>
+  <desc id="desc">A home for your music. A local-first player with playlists and synchronized lyrics.</desc>
+  <defs>
+    <linearGradient id="surface" x2="1" y2="1"><stop stop-color="#fcf8f1"/><stop offset="1" stop-color="#f2e8d9"/></linearGradient>
+    <linearGradient id="sleeve" x2="1" y2="1"><stop stop-color="#eed6b5"/><stop offset="1" stop-color="#fcf8f1"/></linearGradient>
+  </defs>
+  <rect x=".5" y=".5" width="479" height="165" rx="16" fill="url(#surface)" stroke="#decbb3"/>
+  <g transform="translate(26 32) scale(.84)">
+    <rect x="19" y="-4" width="106" height="112" rx="8" transform="rotate(8 72 52)" fill="#eed6b5" stroke="#decbb3"/>
+    <rect x="7" y="1" width="106" height="112" rx="8" transform="rotate(-7 60 57)" fill="#fcf8f1" stroke="#decbb3"/>
+    <rect width="106" height="112" rx="8" fill="url(#sleeve)" stroke="#b9672e" stroke-opacity=".5"/>
+    <circle cx="53" cy="54" r="35" fill="#f9efdf" stroke="#b9672e" stroke-opacity=".3"/>
+    <circle cx="53" cy="54" r="28" fill="none" stroke="#b9672e" stroke-opacity=".14"/>
+    <circle cx="53" cy="54" r="21" fill="none" stroke="#b9672e" stroke-opacity=".14"/>
+    <circle cx="53" cy="54" r="11" fill="#b9672e"/>
+    <circle cx="53" cy="54" r="2.2" fill="#f9efdf"/>
+    <path d="M14 99h20" stroke="#b9672e" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#30241c"><text x="150" y="79" font-size="34" font-weight="700" letter-spacing="-1.1">Meloark</text><text x="152" y="110" font-size="17" fill="#796352">A home for your music.</text></g>
+  <g transform="translate(443 82)" stroke="#b9672e" fill="none">
+    <circle r="17" stroke-opacity=".3"/>
+    <path d="M-5 5 5-5M-4-5h9v9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
