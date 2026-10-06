@@ -1,4 +1,10 @@
 <picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 480px) and (prefers-color-scheme: dark)" srcset="assets/header-dark-small.svg">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 480px)" srcset="assets/header-light-small.svg">
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/header-light.svg">
+  <source media="(max-width: 480px) and (prefers-color-scheme: dark)" srcset="assets/header-dark-small.gif">
+  <source media="(max-width: 480px)" srcset="assets/header-light-small.gif">
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.gif">
   <source media="(prefers-color-scheme: light)" srcset="assets/header-light.gif">
   <img alt="Mark Dsilva — browser tools and music" src="assets/header-light.gif" width="100%">

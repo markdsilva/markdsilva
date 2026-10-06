@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""Render the profile header. Requires Python 3, Pillow, NumPy, Inkscape and FFmpeg.
+"""Render the approved header. Python 3, Pillow, NumPy, Inkscape and FFmpeg.
 
-Run from any directory: python scripts/render_header.py
-SVGs remain the editable, static alternatives. All motion is periodic over 8 s.
-Amber #FAA544 and orange #F18029 are sampled from the existing profile avatar;
-the light version uses its copper #B1522F for contrast.
+Run: python scripts/render_header.py
+Editable SVGs hold the palettes and desktop/mobile composition.
+Motion matches the preview: a 12-second orbit and a quiet audio phrase.
 """
-
 import math
 from pathlib import Path
+import re
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
@@ -17,93 +16,126 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
-SIZE = (960, 320)
 SCALE = 2
-FRAMES = 160
+FRAMES = 240
 DURATION_MS = 50
-HEIGHTS = [22, 36, 56, 82, 112, 68, 40, 92, 136, 100, 60, 32, 48, 76, 104, 64, 36]
-SVG_NS = 'http://www.w3.org/2000/svg'
-ET.register_namespace('', SVG_NS)
+HEIGHTS = [20, 32, 49, 67, 52, 36, 65, 88, 76, 48, 34, 53, 70, 42, 24]
+ET.register_namespace('', 'http://www.w3.org/2000/svg')
 
 
-def background(theme):
-    """Rasterize the source artwork without its static waveform or orbit dots."""
-    tree = ET.parse(ROOT / 'assets' / f'header-{theme}.svg')
-    for parent in tree.getroot().iter():
-        for child in list(parent):
-            is_wave = child.tag == f'{{{SVG_NS}}}g' and child.get('fill') == 'url(#wave)'
-            is_dot = child.tag == f'{{{SVG_NS}}}circle' and child.get('cx') in ('800', '694') and child.get('r') == '4'
-            if is_wave or is_dot:
-                parent.remove(child)
+def rgb(hex_color):
+    return np.array([int(hex_color[i:i + 2], 16) for i in (1, 3, 5)])
+
+
+def background(theme, compact):
+    stem = f'header-{theme}' + ('-small' if compact else '')
+    tree = ET.parse(ROOT / 'assets' / f'{stem}.svg')
+    svg = tree.getroot()
+    ids = {el.get('id'): el for el in svg.iter() if el.get('id')}
+    size = int(svg.get('width')), int(svg.get('height'))
+    transform = ids['amber-art'].get('transform')
+    center = tuple(map(float, re.search(r'translate\(([^)]+)\)', transform)[1].split()))
+    scale_match = re.search(r'scale\(([^)]+)\)', transform)
+    art_scale = float(scale_match[1]) if scale_match else 1.0
+    colors = [rgb(stop.get('stop-color')) for stop in ids['amber-bars']]
+    accent = rgb(next(el.get('fill') for el in ids['amber-orbit']
+                      if el.get('fill', '').startswith('#')))
+    ids['amber-signal'].clear()
+    ids['amber-art'].remove(ids['amber-orbit'])
     with tempfile.TemporaryDirectory() as tmp:
         source, target = Path(tmp) / 'base.svg', Path(tmp) / 'base.png'
         tree.write(source, encoding='utf-8', xml_declaration=True)
-        subprocess.run([
-            'inkscape', str(source), '--export-type=png',
-            f'--export-filename={target}', f'--export-width={SIZE[0] * SCALE}',
-        ], check=True, capture_output=True)
-        # Opaque corners prevent GIF transparency/disposal artifacts.
-        matte = Image.new('RGBA', (SIZE[0] * SCALE, SIZE[1] * SCALE),
+        subprocess.run(['inkscape', str(source), '--export-type=png',
+                        f'--export-filename={target}', f'--export-width={size[0] * SCALE}'],
+                       check=True, capture_output=True)
+        matte = Image.new('RGBA', (size[0] * SCALE, size[1] * SCALE),
                           '#0d1117' if theme == 'dark' else '#ffffff')
         matte.alpha_composite(Image.open(target).convert('RGBA'))
-        return matte.convert('RGB')
+        return matte, size, center, art_scale, colors, accent, stem
 
 
-def frame(base, theme, phase):
+def frame(artwork, phase):
+    base, size, center, art_scale, colors, accent, _ = artwork
     phase %= 1.0
     tau = 2 * math.pi
-    color = (250, 165, 68) if theme == 'dark' else (177, 82, 47)
-    orange = (241, 128, 41) if theme == 'dark' else color
-    canvas = base.copy().convert('RGBA')
-    layer = Image.new('RGBA', canvas.size)
+    s = SCALE * art_scale
+    cx, cy = center[0] * SCALE, center[1] * SCALE
+    layer = Image.new('RGBA', base.size)
     draw = ImageDraw.Draw(layer)
-
-    # A coherent traveling phrase, with small secondary movement. Integer
-    # frequencies ensure the last-to-first transition is another normal step.
     for i, height in enumerate(HEIGHTS):
-        modulation = 1 + .105 * math.sin(tau * 2 * phase - i * .36) + .035 * math.sin(tau * phase + i * .53)
-        h = height * modulation
-        x0, y0 = round((686 + 13 * i) * SCALE), round((160 - h / 2) * SCALE)
-        w, pixels = 5 * SCALE, max(1, round(h * SCALE))
+        h = height * (1 + .10 * math.sin(tau * phase * 3 - i * .32)
+                      + .025 * math.sin(tau * phase + i * .42))
+        x0, y0 = round(cx + (-72 + i * 10) * s), round(cy - h / 2 * s)
+        w, pixels = max(1, round(4 * s)), max(1, round(h * s))
         mask = Image.new('L', (w, pixels))
-        ImageDraw.Draw(mask).rounded_rectangle((0, 0, w - 1, pixels - 1), radius=2.5 * SCALE, fill=255)
+        ImageDraw.Draw(mask).rounded_rectangle((0, 0, w - 1, pixels - 1),
+                                               radius=2 * s, fill=255)
         gradient = np.zeros((pixels, w, 4), dtype=np.uint8)
         for y in range(pixels):
             ratio = y / max(1, pixels - 1)
-            gradient[y, :, :3] = np.asarray(color) * (1 - ratio * .45) + np.asarray(orange) * ratio * .45
-            gradient[y, :, 3] = round(255 * (1 - .52 * ratio))
+            if ratio <= .5:
+                gradient[y, :, :3] = colors[0] * (1 - ratio * 2) + colors[1] * ratio * 2
+                alpha = 255
+            else:
+                f = (ratio - .5) * 2
+                gradient[y, :, :3] = colors[1] * (1 - f) + colors[2] * f
+                alpha = round(255 * (1 - .48 * f))
+            gradient[y, :, 3] = alpha
         bar = Image.fromarray(gradient)
         bar.putalpha(Image.fromarray(np.minimum(gradient[:, :, 3], np.asarray(mask))))
         layer.alpha_composite(bar, (x0, y0))
-
-    # One quiet orbit with a short, tapering tail. The rings themselves stay still.
     angle = -math.pi / 2 + tau * phase
-    for j in range(18):
-        a = angle - (18 - j) * .012
-        b = a + .012
-        p = [(round((800 + 136 * math.cos(v)) * SCALE),
-              round((160 + 136 * math.sin(v)) * SCALE)) for v in (a, b)]
-        draw.line(p, fill=(*color, round(65 * (j + 1) / 18)), width=SCALE)
-    x, y = (800 + 136 * math.cos(angle)) * SCALE, (160 + 136 * math.sin(angle)) * SCALE
-    draw.ellipse((x - 7 * SCALE, y - 7 * SCALE, x + 7 * SCALE, y + 7 * SCALE), fill=(*color, 15))
-    draw.ellipse((x - 3.5 * SCALE, y - 3.5 * SCALE, x + 3.5 * SCALE, y + 3.5 * SCALE), fill=(*color, 255))
+    color = tuple(int(c) for c in accent)
+    points = [(round(cx + 104 * s * math.cos(a)), round(cy + 104 * s * math.sin(a)))
+              for a in np.linspace(angle - .52, angle, 60)]
+    draw.line(points, fill=(*color, 64), width=max(1, round(1.35 * s)))
+    x, y = cx + 104 * s * math.cos(angle), cy + 104 * s * math.sin(angle)
+    draw.ellipse((x - 7 * s, y - 7 * s, x + 7 * s, y + 7 * s), fill=(*color, 26))
+    draw.ellipse((x - 2.8 * s, y - 2.8 * s, x + 2.8 * s, y + 2.8 * s), fill=(*color, 255))
+    canvas = base.copy()
     canvas.alpha_composite(layer)
-    return canvas.convert('RGB').resize(SIZE, Image.Resampling.LANCZOS)
+    return canvas.convert('RGB').resize(size, Image.Resampling.LANCZOS)
 
 
-def render(theme):
-    base = background(theme)
-    # One palette for every frame keeps static type and background stable.
-    swatches = Image.new('RGB', (SIZE[0], SIZE[1] * 12))
-    for i in range(12):
-        swatches.paste(frame(base, theme, i / 12), (0, i * SIZE[1]))
-    palette = swatches.quantize(colors=256, method=Image.Quantize.MEDIANCUT)
-    frames = [frame(base, theme, i / FRAMES).quantize(palette=palette, dither=Image.Dither.NONE)
-              for i in range(FRAMES)]
-    target = ROOT / 'assets' / f'header-{theme}.gif'
+def render(theme, compact):
+    artwork = background(theme, compact)
+    size, stem = artwork[1], artwork[-1]
+    # Reserve colors for the small waveform instead of letting the much larger
+    # stationary background consume nearly the entire GIF palette.
+    base_palette = artwork[0].convert('RGB').resize(size, Image.Resampling.LANCZOS).quantize(colors=160)
+    samples = []
+    cx, cy = artwork[2]
+    scale = artwork[3]
+    for i in range(16):
+        phase = i / 16
+        pixels = np.asarray(frame(artwork, phase))
+        for j, height in enumerate(HEIGHTS):
+            h = height * (1 + .10 * math.sin(2 * math.pi * phase * 3 - j * .32)
+                          + .025 * math.sin(2 * math.pi * phase + j * .42))
+            x = round(cx + (-70 + j * 10) * scale)
+            start, end = round(cy - h * scale / 2), round(cy + h * scale / 2)
+            samples.append(pixels[start:end, max(0, x - 1):x + 1].reshape(-1, 3))
+    wave_pixels = np.concatenate(samples).reshape(-1, 1, 3)
+    wave_palette = Image.fromarray(wave_pixels).quantize(colors=96)
+    palette = Image.new('P', (1, 1))
+    palette.putpalette(base_palette.getpalette()[:160 * 3] + wave_palette.getpalette()[:96 * 3])
+    # Dither smooth gradients once, then keep every stationary pixel identical
+    # throughout the loop. This avoids both banding and background shimmer.
+    static = artwork[0].convert('RGB').resize(size, Image.Resampling.LANCZOS)
+    static_rgb = np.asarray(static)
+    static_indices = np.asarray(static.quantize(palette=palette, dither=Image.Dither.FLOYDSTEINBERG))
+    frames = []
+    for i in range(FRAMES):
+        image = frame(artwork, i / FRAMES)
+        indices = np.array(image.quantize(palette=palette, dither=Image.Dither.FLOYDSTEINBERG))
+        stationary = np.all(np.asarray(image) == static_rgb, axis=2)
+        indices[stationary] = static_indices[stationary]
+        indexed = Image.frombytes('P', size, indices.tobytes())
+        indexed.putpalette(palette.getpalette())
+        frames.append(indexed)
+    target = ROOT / 'assets' / f'{stem}.gif'
     frames[0].save(target, save_all=True, append_images=frames[1:],
                    duration=DURATION_MS, loop=0, disposal=1, optimize=False)
-    # Transparent frame differences avoid re-encoding the stationary rings.
     with tempfile.TemporaryDirectory() as tmp:
         optimized = Path(tmp) / 'optimized.gif'
         subprocess.run([
@@ -114,9 +146,10 @@ def render(theme):
             '-final_delay', str(DURATION_MS // 10), str(optimized),
         ], check=True)
         target.write_bytes(optimized.read_bytes())
-    print(f'{target.name}: {target.stat().st_size / 1024:.0f} KB, 8 s, 20 fps')
+    print(f'{target.name}: {target.stat().st_size / 1024:.0f} KB, 12 s, 20 fps', flush=True)
 
 
 if __name__ == '__main__':
     for mode in ('dark', 'light'):
-        render(mode)
+        for mobile in (False, True):
+            render(mode, mobile)
