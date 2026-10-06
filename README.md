@@ -12,55 +12,61 @@
 
 <br>
 
-I build browser tools with **React and TypeScript**, with a focus on local-first experiences. My earlier work includes a computer-vision project in Python.
-
-**Currently building:** [Meloark](https://github.com/markdsilva/Meloark) — a home for your music.
+I build **local-first browser tools** with **React and TypeScript**, with a focus on clear interfaces and keeping your data on your device.
 
 <br>
 
-### <img src="assets/amber-accent.svg" alt="" width="10" height="10"> 01 / Featured project
+## <img src="assets/amber-accent.svg" alt="" width="10" height="10"> Meloark
 
-#### [Meloark ↗](https://github.com/markdsilva/Meloark)
+<sub>Currently building · A local-first music player and library</sub>
 
-**Your music. Your device. Your browser.**
+> **Your music. Your device. Your browser.**
 
-A local-first music player and library. Explore your albums, build and export M3U8 playlists, and follow synchronized lyrics without uploading your audio.
+A home for your music collection, right in your browser. Explore your albums, make playlists, and follow synchronized lyrics without uploading your audio.
 
-| Listen | Organize | Follow along |
-| :--- | :--- | :--- |
-| Play local tracks and browse artwork and audio details. | Edit playlists, reorder tracks, and undo changes. | Load local LRC files or opt into online lyrics. |
+- **Listen** — Play local tracks and explore album artwork and audio details.
+- **Organize** — Create and reorder playlists, undo changes, and export M3U8 files.
+- **Follow along** — Use local LRC files or opt into online lyrics.
 
-**[Open Meloark →](https://meloark.markdsilva.com/)** &nbsp; · &nbsp; [Explore the code](https://github.com/markdsilva/Meloark) &nbsp; · &nbsp; [Report an issue](https://github.com/markdsilva/Meloark/issues)
+**[Open Meloark →](https://meloark.markdsilva.com/)** &nbsp; · &nbsp; [Source ↗](https://github.com/markdsilva/Meloark) &nbsp; · &nbsp; [Issues ↗](https://github.com/markdsilva/Meloark/issues)
 
-<sub>React · TypeScript · Vite · IndexedDB · Native browser audio</sub>
-
-<sub><strong>Meloark</strong> = melody + ark — a home for your music collection.</sub>
+<sub>Melody + ark — a home for your music.</sub>
 
 <br>
 
-### <img src="assets/amber-accent.svg" alt="" width="10" height="10"> 02 / Earlier exploration
-
-#### [Vision-Based Fall Detection ↗](https://github.com/markdsilva/vision-based-fall-detection)
-
-A college computer-vision prototype combining person detection, pose estimation, tracking, and action recognition to identify possible falls in video.
-
-<sub>Python · PyTorch · OpenCV &nbsp; / &nbsp; Archived · Academic prototype · No longer maintained</sub>
-
-<br>
-
-### <img src="assets/amber-accent.svg" alt="" width="10" height="10"> 03 / Tools in these projects
+## <img src="assets/amber-accent.svg" alt="" width="10" height="10"> Tools
 
 <p>
-  <img src="assets/icons/react.svg" alt="React" width="32" height="32">&nbsp;&nbsp;
-  <img src="assets/icons/typescript.svg" alt="TypeScript" width="32" height="32">&nbsp;&nbsp;
-  <img src="assets/icons/vitejs.svg" alt="Vite" width="32" height="32">&nbsp;&nbsp;
-  <img src="assets/icons/python.svg" alt="Python" width="32" height="32">&nbsp;&nbsp;
-  <img src="assets/icons/pytorch.svg" alt="PyTorch" width="32" height="32">&nbsp;&nbsp;
-  <img src="assets/icons/opencv.svg" alt="OpenCV" width="32" height="32">
+  <img src="assets/icons/react.svg" alt="React" width="28" height="28">&nbsp;&nbsp;&nbsp;
+  <img src="assets/icons/typescript.svg" alt="TypeScript" width="28" height="28">&nbsp;&nbsp;&nbsp;
+  <img src="assets/icons/vitejs.svg" alt="Vite" width="28" height="28">
 </p>
 
-<sub>Web: React / TypeScript / Vite &nbsp; · &nbsp; Vision: Python / PyTorch / OpenCV</sub>
+<sub>React · TypeScript · Vite &nbsp; / &nbsp; IndexedDB · Native browser audio</sub>
+
+<br>
+
+<details>
+<summary><strong>Earlier work</strong> &nbsp; · &nbsp; Vision-based fall detection</summary>
+
+<br>
+
+### [Vision-Based Fall Detection ↗](https://github.com/markdsilva/vision-based-fall-detection)
+
+A college prototype exploring person detection, pose estimation, tracking, and action recognition to identify possible falls in video.
+
+<p>
+  <img src="assets/icons/python.svg" alt="Python" width="24" height="24">&nbsp;&nbsp;&nbsp;
+  <img src="assets/icons/pytorch.svg" alt="PyTorch" width="24" height="24">&nbsp;&nbsp;&nbsp;
+  <img src="assets/icons/opencv.svg" alt="OpenCV" width="24" height="24">
+</p>
+
+<sub>Python · PyTorch · OpenCV &nbsp; / &nbsp; Archived academic prototype</sub>
+
+</details>
+
+<br>
 
 ---
 
-<sub>[Browse my public repositories →](https://github.com/markdsilva?tab=repositories&amp;type=public)</sub>
+<sub>[Explore my public repositories →](https://github.com/markdsilva?tab=repositories&amp;type=public)</sub>
