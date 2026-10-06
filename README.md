@@ -6,7 +6,7 @@
 
 <br>
 
-I build browser-based tools with **React and TypeScript**. My public projects span local music libraries and an earlier exploration of computer vision in Python.
+I build browser tools with **React and TypeScript**, with a focus on local-first experiences. My earlier work includes a computer-vision project in Python.
 
 **Currently building:** [Meloark](https://github.com/markdsilva/Meloark) — a home for your music.
 
@@ -28,7 +28,7 @@ A local-first music player and library. Explore your albums, build and export M3
 
 <sub>React · TypeScript · Vite · IndexedDB · Native browser audio</sub>
 
-<sub><strong>Meloark</strong> = melody + ark — a home for your music collection. Evolved from TrackIndex; the original project remains a reference.</sub>
+<sub><strong>Meloark</strong> = melody + ark — a home for your music collection.</sub>
 
 <br>
 
@@ -54,25 +54,6 @@ A college computer-vision prototype combining person detection, pose estimation,
 </p>
 
 <sub>Web: React / TypeScript / Vite &nbsp; · &nbsp; Vision: Python / PyTorch / OpenCV</sub>
-
-<br>
-
-<details>
-<summary><strong>Public repository stats</strong></summary>
-
-<br>
-
-<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/stats-mobile-dark.svg">
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/stats-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg">
-  <img alt="Public repository counts and language breakdown. Includes forks; refreshed daily." src="assets/stats-light.svg" width="100%">
-</picture>
-
-<sub>Language mix across public repositories, including forks. Refreshed daily.</sub>
-
-</details>
 
 ---
 
