@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-  <img alt="Mark Dsilva — browser tools and music" src="assets/header-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.gif">
+  <source media="(prefers-color-scheme: light)" srcset="assets/header-light.gif">
+  <img alt="Mark Dsilva — browser tools and music" src="assets/header-light.gif" width="100%">
 </picture>
 
 <br>
@@ -12,7 +12,7 @@ I build browser tools with **React and TypeScript**, with a focus on local-first
 
 <br>
 
-### 01 / Featured project
+### <img src="assets/amber-accent.svg" alt="" width="10" height="10"> 01 / Featured project
 
 #### [Meloark ↗](https://github.com/markdsilva/Meloark)
 
@@ -32,7 +32,7 @@ A local-first music player and library. Explore your albums, build and export M3
 
 <br>
 
-### 02 / Earlier exploration
+### <img src="assets/amber-accent.svg" alt="" width="10" height="10"> 02 / Earlier exploration
 
 #### [Vision-Based Fall Detection ↗](https://github.com/markdsilva/vision-based-fall-detection)
 
@@ -42,7 +42,7 @@ A college computer-vision prototype combining person detection, pose estimation,
 
 <br>
 
-### 03 / Tools in these projects
+### <img src="assets/amber-accent.svg" alt="" width="10" height="10"> 03 / Tools in these projects
 
 <p>
   <img src="assets/icons/react.svg" alt="React" width="32" height="32">&nbsp;&nbsp;
